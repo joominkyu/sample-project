@@ -2,8 +2,14 @@ package com.example.backend.service;
 
 import com.example.backend.entity.Member;
 import com.example.backend.entity.MemberGrade;
-import com.example.backend.repository.member.*;
+import com.example.backend.repository.member.MemberLoginIdCheckResponse;
+import com.example.backend.repository.member.MemberLoginRequest;
+import com.example.backend.repository.member.MemberLoginResponse;
+import com.example.backend.repository.member.MemberRepository;
+import com.example.backend.repository.member.MemberResponse;
+import com.example.backend.repository.member.MemberSignupRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,6 +17,17 @@ import org.springframework.stereotype.Service;
 public class MemberService {
 
     private final MemberRepository memberRepository;
+    private final PasswordEncoder passwordEncoder;
+
+    public MemberLoginIdCheckResponse checkLoginId(String loginId) {
+        boolean exists = memberRepository.existsByLoginId(loginId);
+
+        if (exists) {
+            return new MemberLoginIdCheckResponse(false, "이미 사용 중인 아이디입니다.");
+        }
+
+        return new MemberLoginIdCheckResponse(true, "사용 가능한 아이디입니다.");
+    }
 
     public MemberResponse signup(MemberSignupRequest request) {
         if (memberRepository.existsByLoginId(request.getLoginId())) {
@@ -20,7 +37,7 @@ public class MemberService {
         Member member = new Member(
                 request.getName(),
                 request.getLoginId(),
-                request.getPassword(),
+                passwordEncoder.encode(request.getPassword()),
                 MemberGrade.BASIC
         );
 
@@ -32,7 +49,7 @@ public class MemberService {
         Member member = memberRepository.findByLoginId(request.getLoginId())
                 .orElseThrow(() -> new IllegalArgumentException("아이디 또는 비밀번호가 올바르지 않습니다."));
 
-        if (!member.getPassword().equals(request.getPassword())) {
+        if (!passwordEncoder.matches(request.getPassword(), member.getPassword())) {
             throw new IllegalArgumentException("아이디 또는 비밀번호가 올바르지 않습니다.");
         }
 

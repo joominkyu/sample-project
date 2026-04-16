@@ -1,5 +1,6 @@
 package com.example.backend.controller;
 
+import com.example.backend.repository.member.MemberLoginIdCheckResponse;
 import com.example.backend.repository.member.MemberLoginRequest;
 import com.example.backend.repository.member.MemberLoginResponse;
 import com.example.backend.repository.member.MemberResponse;
@@ -14,6 +15,11 @@ import org.springframework.web.bind.annotation.*;
 public class MemberController {
 
     private final MemberService memberService;
+
+    @GetMapping("/check-login-id")
+    public MemberLoginIdCheckResponse checkLoginId(@RequestParam String loginId) {
+        return memberService.checkLoginId(loginId);
+    }
 
     @PostMapping("/signup")
     public MemberResponse signup(@RequestBody MemberSignupRequest request) {
