@@ -21,11 +21,7 @@ public class NewsService {
     public List<NewsResponse> getNewsList() {
         return newsRepository.findAll()
                 .stream()
-                .map(news -> new NewsResponse(
-                        news.getId(),
-                        news.getTitle(),
-                        news.getContent()
-                ))
+                .map(NewsResponse::from)
                 .toList();
     }
 
@@ -33,26 +29,13 @@ public class NewsService {
         News news = newsRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("뉴스를 찾을 수 없습니다. id=" + id));
 
-        return new NewsResponse(
-                news.getId(),
-                news.getTitle(),
-                news.getContent()
-        );
+        return NewsResponse.from(news);
     }
 
     public NewsResponse createNews(NewsCreateRequest request) {
-        News news = new News(
-                request.getTitle(),
-                request.getContent()
-        );
-
+        News news = new News(request.getTitle(), request.getContent());
         News saved = newsRepository.save(news);
-
-        return new NewsResponse(
-                saved.getId(),
-                saved.getTitle(),
-                saved.getContent()
-        );
+        return NewsResponse.from(saved);
     }
 
     @Transactional
@@ -61,12 +44,7 @@ public class NewsService {
                 .orElseThrow(() -> new EntityNotFoundException("뉴스를 찾을 수 없습니다. id=" + id));
 
         news.update(request.getTitle(), request.getContent());
-
-        return new NewsResponse(
-                news.getId(),
-                news.getTitle(),
-                news.getContent()
-        );
+        return NewsResponse.from(news);
     }
 
     public void deleteNews(Long id) {
