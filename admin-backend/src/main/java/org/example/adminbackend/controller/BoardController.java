@@ -1,7 +1,7 @@
 package org.example.adminbackend.controller;
 
-import org.example.adminbackend.repository.BoardCreateRequest;
-import org.example.adminbackend.repository.BoardResponse;
+import org.example.adminbackend.repository.board.BoardCreateRequest;
+import org.example.adminbackend.repository.board.BoardResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

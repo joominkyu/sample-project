@@ -1,4 +1,4 @@
-package org.example.adminbackend.repository;
+package org.example.adminbackend.repository.board;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
