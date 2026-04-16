@@ -1,7 +1,7 @@
 package org.example.adminbackend.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.adminbackend.entity.MemberGrade;
+import org.example.adminbackend.repository.member.MemberGradeUpdateRequest;
 import org.example.adminbackend.repository.member.MemberResponse;
 import org.example.adminbackend.service.MemberService;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +23,8 @@ public class MemberController {
     @PatchMapping("/{memberId}/grade")
     public MemberResponse updateGrade(
             @PathVariable Long memberId,
-            @RequestParam MemberGrade grade
+            @RequestBody MemberGradeUpdateRequest request
     ) {
-        return memberService.updateGrade(memberId, grade);
+        return memberService.updateGrade(memberId, request);
     }
 }

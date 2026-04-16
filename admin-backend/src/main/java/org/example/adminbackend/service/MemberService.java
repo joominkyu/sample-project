@@ -2,10 +2,11 @@ package org.example.adminbackend.service;
 
 import lombok.RequiredArgsConstructor;
 import org.example.adminbackend.entity.Member;
-import org.example.adminbackend.entity.MemberGrade;
+import org.example.adminbackend.repository.member.MemberGradeUpdateRequest;
 import org.example.adminbackend.repository.member.MemberRepository;
 import org.example.adminbackend.repository.member.MemberResponse;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -22,11 +23,12 @@ public class MemberService {
                 .toList();
     }
 
-    public MemberResponse updateGrade(Long memberId, MemberGrade grade) {
+    @Transactional
+    public MemberResponse updateGrade(Long memberId, MemberGradeUpdateRequest request) {
         Member member = memberRepository.findById(memberId)
-                .orElseThrow(() -> new RuntimeException("회원 없음"));
+                .orElseThrow(() -> new RuntimeException("회원이 존재하지 않습니다. id=" + memberId));
 
-        member.changeGrade(grade);
+        member.changeGrade(request.getGrade());
 
         return MemberResponse.from(member);
     }
