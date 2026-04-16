@@ -1,35 +1,20 @@
 package org.example.adminbackend.auth;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import org.example.adminbackend.repository.manager.ManagerLoginRequest;
+import org.example.adminbackend.repository.manager.ManagerLoginResponse;
+import org.example.adminbackend.service.ManagerService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/admin")
+@RequiredArgsConstructor
 public class AdminLoginController {
 
+    private final ManagerService managerService;
+
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request) {
-        if ("admin".equals(request.getLoginId()) && "1234".equals(request.getPassword())) {
-            return ResponseEntity.ok(new LoginResponse("로그인 성공", request.getLoginId()));
-        }
-
-        return ResponseEntity.status(401).build();
-    }
-
-    @Getter
-    @Setter
-    public static class LoginRequest {
-        private String loginId;
-        private String password;
-    }
-
-    @Getter
-    @AllArgsConstructor
-    public static class LoginResponse {
-        private String message;
-        private String loginId;
+    public ManagerLoginResponse login(@RequestBody ManagerLoginRequest request) {
+        return managerService.login(request);
     }
 }
