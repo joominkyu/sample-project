@@ -2,6 +2,7 @@ package org.example.adminbackend.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.adminbackend.repository.manager.ManagerCreateRequest;
+import org.example.adminbackend.repository.manager.ManagerLoginIdCheckResponse;
 import org.example.adminbackend.repository.manager.ManagerLoginRequest;
 import org.example.adminbackend.repository.manager.ManagerLoginResponse;
 import org.example.adminbackend.repository.manager.ManagerResponse;
@@ -20,6 +21,11 @@ public class ManagerController {
     @GetMapping
     public List<ManagerResponse> getManagers() {
         return managerService.getManagers();
+    }
+
+    @GetMapping("/check-login-id")
+    public ManagerLoginIdCheckResponse checkLoginId(@RequestParam String loginId) {
+        return managerService.checkLoginId(loginId);
     }
 
     @PostMapping
