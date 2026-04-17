@@ -1,5 +1,6 @@
 package org.example.adminbackend.auth;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.adminbackend.repository.manager.ManagerLoginRequest;
 import org.example.adminbackend.repository.manager.ManagerLoginResponse;
@@ -14,7 +15,7 @@ public class AdminLoginController {
     private final ManagerService managerService;
 
     @PostMapping("/login")
-    public ManagerLoginResponse login(@RequestBody ManagerLoginRequest request) {
+    public ManagerLoginResponse login(@RequestBody @Valid ManagerLoginRequest request) {
         return managerService.login(request);
     }
 }

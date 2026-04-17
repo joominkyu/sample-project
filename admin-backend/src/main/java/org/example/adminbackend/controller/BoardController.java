@@ -1,5 +1,6 @@
 package org.example.adminbackend.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.adminbackend.repository.board.BoardCreateRequest;
 import org.example.adminbackend.repository.board.BoardResponse;
@@ -26,14 +27,14 @@ public class BoardController {
     }
 
     @PostMapping
-    public BoardResponse createBoard(@RequestBody BoardCreateRequest request) {
+    public BoardResponse createBoard(@RequestBody @Valid BoardCreateRequest request) {
         return boardService.createBoard(request);
     }
 
     @PutMapping("/{id}")
     public BoardResponse updateBoard(
             @PathVariable Long id,
-            @RequestBody BoardCreateRequest request
+            @RequestBody @Valid BoardCreateRequest request
     ) {
         return boardService.updateBoard(id, request);
     }

@@ -6,6 +6,7 @@ import com.example.backend.repository.member.MemberLoginResponse;
 import com.example.backend.repository.member.MemberResponse;
 import com.example.backend.repository.member.MemberSignupRequest;
 import com.example.backend.service.MemberService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,12 +23,12 @@ public class MemberController {
     }
 
     @PostMapping("/signup")
-    public MemberResponse signup(@RequestBody MemberSignupRequest request) {
+    public MemberResponse signup(@RequestBody @Valid MemberSignupRequest request) {
         return memberService.signup(request);
     }
 
     @PostMapping("/login")
-    public MemberLoginResponse login(@RequestBody MemberLoginRequest request) {
+    public MemberLoginResponse login(@RequestBody @Valid MemberLoginRequest request) {
         return memberService.login(request);
     }
 

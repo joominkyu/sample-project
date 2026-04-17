@@ -1,5 +1,6 @@
 package org.example.adminbackend.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.adminbackend.repository.news.NewsCreateRequest;
 import org.example.adminbackend.repository.news.NewsResponse;
@@ -27,14 +28,14 @@ public class NewsController {
     }
 
     @PostMapping
-    public NewsResponse createNews(@RequestBody NewsCreateRequest request) {
+    public NewsResponse createNews(@RequestBody @Valid NewsCreateRequest request) {
         return newsService.createNews(request);
     }
 
     @PutMapping("/{id}")
     public NewsResponse updateNews(
             @PathVariable Long id,
-            @RequestBody NewsUpdateRequest request
+            @RequestBody @Valid NewsUpdateRequest request
     ) {
         return newsService.updateNews(id, request);
     }

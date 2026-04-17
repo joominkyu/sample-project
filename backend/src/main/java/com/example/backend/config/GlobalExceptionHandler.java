@@ -1,4 +1,4 @@
-package org.example.adminbackend.config;
+package com.example.backend.config;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;

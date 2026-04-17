@@ -1,5 +1,6 @@
 package org.example.adminbackend.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.adminbackend.repository.member.MemberGradeUpdateRequest;
 import org.example.adminbackend.repository.member.MemberResponse;
@@ -23,7 +24,7 @@ public class MemberController {
     @PatchMapping("/{memberId}/grade")
     public MemberResponse updateGrade(
             @PathVariable Long memberId,
-            @RequestBody MemberGradeUpdateRequest request
+            @RequestBody @Valid MemberGradeUpdateRequest request
     ) {
         return memberService.updateGrade(memberId, request);
     }

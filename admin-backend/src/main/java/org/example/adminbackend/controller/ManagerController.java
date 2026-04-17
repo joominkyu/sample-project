@@ -1,5 +1,6 @@
 package org.example.adminbackend.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.adminbackend.repository.manager.ManagerCreateRequest;
 import org.example.adminbackend.repository.manager.ManagerGradeUpdateRequest;
@@ -30,7 +31,7 @@ public class ManagerController {
     }
 
     @PostMapping
-    public ManagerResponse createManager(@RequestBody ManagerCreateRequest request) {
+    public ManagerResponse createManager(@RequestBody @Valid ManagerCreateRequest request) {
         return managerService.createManager(request);
     }
 
@@ -38,7 +39,7 @@ public class ManagerController {
     public ManagerResponse updateGrade(
             @PathVariable Long managerId,
             @RequestHeader("X-Admin-LoginId") String currentLoginId,
-            @RequestBody ManagerGradeUpdateRequest request
+            @RequestBody @Valid ManagerGradeUpdateRequest request
     ) {
         return managerService.updateGrade(managerId, currentLoginId, request);
     }
@@ -46,7 +47,7 @@ public class ManagerController {
     @PatchMapping("/{managerId}/password")
     public ResponseEntity<Void> changePassword(
             @PathVariable Long managerId,
-            @RequestBody ManagerPasswordChangeRequest request
+            @RequestBody @Valid ManagerPasswordChangeRequest request
     ) {
         managerService.changePassword(managerId, request);
         return ResponseEntity.noContent().build();

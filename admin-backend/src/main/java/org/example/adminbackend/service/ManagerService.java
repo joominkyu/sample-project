@@ -113,17 +113,7 @@ public class ManagerService {
         Manager manager = managerRepository.findById(managerId)
                 .orElseThrow(() -> new IllegalArgumentException("관리자를 찾을 수 없습니다."));
 
-        String newPassword = request.getNewPassword();
-
-        if (newPassword == null || newPassword.trim().isEmpty()) {
-            throw new IllegalArgumentException("새 비밀번호를 입력해주세요.");
-        }
-
-        if (newPassword.length() < 4) {
-            throw new IllegalArgumentException("비밀번호는 4자 이상 입력해주세요.");
-        }
-
-        manager.changePassword(passwordEncoder.encode(newPassword));
+        manager.changePassword(passwordEncoder.encode(request.getNewPassword()));
     }
 
     @Transactional
