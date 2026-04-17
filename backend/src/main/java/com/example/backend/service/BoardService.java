@@ -18,7 +18,7 @@ public class BoardService {
     private final BoardRepository boardRepository;
 
     public List<BoardResponse> getBoardList() {
-        return boardRepository.findAll()
+        return boardRepository.findAllByOrderByCreatedAtDesc()
                 .stream()
                 .map(BoardResponse::from)
                 .toList();

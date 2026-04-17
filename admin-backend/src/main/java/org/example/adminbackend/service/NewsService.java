@@ -20,7 +20,7 @@ public class NewsService {
     private final NewsRepository newsRepository;
 
     public List<NewsResponse> getNewsList() {
-        return newsRepository.findAll()
+        return newsRepository.findAllByOrderByCreatedAtDesc()
                 .stream()
                 .map(NewsResponse::from)
                 .toList();

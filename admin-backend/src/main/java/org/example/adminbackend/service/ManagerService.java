@@ -52,7 +52,7 @@ public class ManagerService {
     }
 
     public List<ManagerResponse> getManagers() {
-        return managerRepository.findAll()
+        return managerRepository.findAllByOrderByCreatedAtDesc()
                 .stream()
                 .map(ManagerResponse::from)
                 .toList();

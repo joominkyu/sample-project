@@ -3,7 +3,6 @@ package org.example.adminbackend.service;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.example.adminbackend.entity.Member;
-import org.example.adminbackend.entity.MemberGrade;
 import org.example.adminbackend.repository.member.MemberGradeUpdateRequest;
 import org.example.adminbackend.repository.member.MemberRepository;
 import org.example.adminbackend.repository.member.MemberResponse;
@@ -20,7 +19,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     public List<MemberResponse> getMembers() {
-        return memberRepository.findAll()
+        return memberRepository.findAllByOrderByIdDesc()
                 .stream()
                 .map(MemberResponse::from)
                 .toList();
