@@ -11,9 +11,11 @@ import com.example.backend.repository.member.MemberSignupRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -29,6 +31,7 @@ public class MemberService {
         return new MemberLoginIdCheckResponse(true, "사용 가능한 아이디입니다.");
     }
 
+    @Transactional
     public MemberResponse signup(MemberSignupRequest request) {
         if (memberRepository.existsByLoginId(request.getLoginId())) {
             throw new IllegalArgumentException("이미 사용 중인 아이디입니다.");
