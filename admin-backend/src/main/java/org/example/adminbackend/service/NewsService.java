@@ -1,12 +1,12 @@
 package org.example.adminbackend.service;
 
+import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.example.adminbackend.entity.News;
 import org.example.adminbackend.repository.news.NewsCreateRequest;
 import org.example.adminbackend.repository.news.NewsRepository;
 import org.example.adminbackend.repository.news.NewsResponse;
 import org.example.adminbackend.repository.news.NewsUpdateRequest;
-import jakarta.persistence.EntityNotFoundException;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +14,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class NewsService {
 
     private final NewsRepository newsRepository;
@@ -32,6 +33,7 @@ public class NewsService {
         return NewsResponse.from(news);
     }
 
+    @Transactional
     public NewsResponse createNews(NewsCreateRequest request) {
         News news = new News(request.getTitle(), request.getContent());
         News saved = newsRepository.save(news);
@@ -44,9 +46,11 @@ public class NewsService {
                 .orElseThrow(() -> new EntityNotFoundException("뉴스를 찾을 수 없습니다. id=" + id));
 
         news.update(request.getTitle(), request.getContent());
+
         return NewsResponse.from(news);
     }
 
+    @Transactional
     public void deleteNews(Long id) {
         News news = newsRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("뉴스를 찾을 수 없습니다. id=" + id));

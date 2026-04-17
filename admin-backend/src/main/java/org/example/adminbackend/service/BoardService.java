@@ -13,6 +13,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class BoardService {
 
     private final BoardRepository boardRepository;
@@ -26,13 +27,12 @@ public class BoardService {
 
     public BoardResponse getBoard(Long id) {
         Board board = boardRepository.findById(id)
-                .orElseThrow(() ->
-                        new EntityNotFoundException("게시판을 찾을 수 없습니다. id=" + id)
-                );
+                .orElseThrow(() -> new EntityNotFoundException("게시판을 찾을 수 없습니다. id=" + id));
 
         return BoardResponse.from(board);
     }
 
+    @Transactional
     public BoardResponse createBoard(BoardCreateRequest request) {
         Board board = new Board(request.getName());
         Board saved = boardRepository.save(board);
@@ -42,19 +42,17 @@ public class BoardService {
     @Transactional
     public BoardResponse updateBoard(Long id, BoardCreateRequest request) {
         Board board = boardRepository.findById(id)
-                .orElseThrow(() ->
-                        new EntityNotFoundException("게시판을 찾을 수 없습니다. id=" + id)
-                );
+                .orElseThrow(() -> new EntityNotFoundException("게시판을 찾을 수 없습니다. id=" + id));
 
         board.update(request.getName());
+
         return BoardResponse.from(board);
     }
 
+    @Transactional
     public void deleteBoard(Long id) {
         Board board = boardRepository.findById(id)
-                .orElseThrow(() ->
-                        new EntityNotFoundException("게시판을 찾을 수 없습니다. id=" + id)
-                );
+                .orElseThrow(() -> new EntityNotFoundException("게시판을 찾을 수 없습니다. id=" + id));
 
         boardRepository.delete(board);
     }

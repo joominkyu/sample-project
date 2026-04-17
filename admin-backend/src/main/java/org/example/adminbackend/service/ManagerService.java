@@ -8,6 +8,7 @@ import org.example.adminbackend.repository.manager.ManagerGradeUpdateRequest;
 import org.example.adminbackend.repository.manager.ManagerLoginIdCheckResponse;
 import org.example.adminbackend.repository.manager.ManagerLoginRequest;
 import org.example.adminbackend.repository.manager.ManagerLoginResponse;
+import org.example.adminbackend.repository.manager.ManagerPasswordChangeRequest;
 import org.example.adminbackend.repository.manager.ManagerRepository;
 import org.example.adminbackend.repository.manager.ManagerResponse;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -34,27 +35,6 @@ public class ManagerService {
         return new ManagerLoginIdCheckResponse(true, "사용 가능한 관리자 아이디입니다.");
     }
 
-    @Transactional
-    public ManagerResponse createManager(ManagerCreateRequest request) {
-        if (managerRepository.existsByLoginId(request.getLoginId())) {
-            throw new IllegalArgumentException("이미 사용 중인 관리자 아이디입니다.");
-        }
-
-        ManagerGrade grade = managerRepository.count() == 0
-                ? ManagerGrade.SUPER_ADMIN
-                : ManagerGrade.ADMIN;
-
-        Manager manager = new Manager(
-                request.getLoginId(),
-                passwordEncoder.encode(request.getPassword()),
-                request.getName(),
-                grade
-        );
-
-        Manager saved = managerRepository.save(manager);
-        return ManagerResponse.from(saved);
-    }
-
     public ManagerLoginResponse login(ManagerLoginRequest request) {
         Manager manager = managerRepository.findByLoginId(request.getLoginId())
                 .orElseThrow(() -> new IllegalArgumentException("아이디 또는 비밀번호가 올바르지 않습니다."));
@@ -79,7 +59,28 @@ public class ManagerService {
     }
 
     @Transactional
-    public ManagerResponse updateGrade(Long managerId, String currentLoginId, ManagerGrade grade) {
+    public ManagerResponse createManager(ManagerCreateRequest request) {
+        if (managerRepository.existsByLoginId(request.getLoginId())) {
+            throw new IllegalArgumentException("이미 사용 중인 관리자 아이디입니다.");
+        }
+
+        ManagerGrade grade = managerRepository.count() == 0
+                ? ManagerGrade.SUPER_ADMIN
+                : ManagerGrade.ADMIN;
+
+        Manager manager = new Manager(
+                request.getLoginId(),
+                passwordEncoder.encode(request.getPassword()),
+                request.getName(),
+                grade
+        );
+
+        Manager saved = managerRepository.save(manager);
+        return ManagerResponse.from(saved);
+    }
+
+    @Transactional
+    public ManagerResponse updateGrade(Long managerId, String currentLoginId, ManagerGradeUpdateRequest request) {
         Manager currentManager = managerRepository.findByLoginId(currentLoginId)
                 .orElseThrow(() -> new IllegalArgumentException("현재 로그인한 관리자를 찾을 수 없습니다."));
 
@@ -98,13 +99,31 @@ public class ManagerService {
             throw new IllegalArgumentException("최초 관리자 계정의 등급은 변경할 수 없습니다.");
         }
 
-        if (grade == ManagerGrade.SUPER_ADMIN) {
+        if (request.getGrade() == ManagerGrade.SUPER_ADMIN) {
             throw new IllegalArgumentException("SUPER_ADMIN으로 변경할 수 없습니다.");
         }
 
-        targetManager.changeGrade(grade);
+        targetManager.changeGrade(request.getGrade());
 
         return ManagerResponse.from(targetManager);
+    }
+
+    @Transactional
+    public void changePassword(Long managerId, ManagerPasswordChangeRequest request) {
+        Manager manager = managerRepository.findById(managerId)
+                .orElseThrow(() -> new IllegalArgumentException("관리자를 찾을 수 없습니다."));
+
+        String newPassword = request.getNewPassword();
+
+        if (newPassword == null || newPassword.trim().isEmpty()) {
+            throw new IllegalArgumentException("새 비밀번호를 입력해주세요.");
+        }
+
+        if (newPassword.length() < 4) {
+            throw new IllegalArgumentException("비밀번호는 4자 이상 입력해주세요.");
+        }
+
+        manager.changePassword(passwordEncoder.encode(newPassword));
     }
 
     @Transactional
@@ -121,21 +140,5 @@ public class ManagerService {
         }
 
         managerRepository.delete(manager);
-    }
-
-    @Transactional
-    public void changePassword(Long managerId, String newPassword) {
-        Manager manager = managerRepository.findById(managerId)
-                .orElseThrow(() -> new IllegalArgumentException("관리자를 찾을 수 없습니다."));
-
-        if (newPassword == null || newPassword.trim().isEmpty()) {
-            throw new IllegalArgumentException("새 비밀번호를 입력해주세요.");
-        }
-
-        if (newPassword.length() < 4) {
-            throw new IllegalArgumentException("비밀번호는 4자 이상 입력해주세요.");
-        }
-
-        manager.changePassword(passwordEncoder.encode(newPassword));
     }
 }
