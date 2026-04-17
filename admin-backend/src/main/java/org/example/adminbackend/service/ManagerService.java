@@ -66,4 +66,11 @@ public class ManagerService {
                 .map(ManagerResponse::from)
                 .toList();
     }
+
+    public void deleteManager(Long managerId) {
+        Manager manager = managerRepository.findById(managerId)
+                .orElseThrow(() -> new IllegalArgumentException("관리자를 찾을 수 없습니다."));
+
+        managerRepository.delete(manager);
+    }
 }

@@ -37,4 +37,9 @@ public class ManagerController {
     public ManagerLoginResponse login(@RequestBody ManagerLoginRequest request) {
         return managerService.login(request);
     }
+
+    @DeleteMapping("/{managerId}")
+    public void deleteManager(@PathVariable Long managerId) {
+        managerService.deleteManager(managerId);
+    }
 }
