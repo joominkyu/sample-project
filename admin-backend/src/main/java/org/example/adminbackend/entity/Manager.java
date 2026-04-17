@@ -25,13 +25,26 @@ public class Manager {
     @Column(nullable = false)
     private String name;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private ManagerGrade grade;
+
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    public Manager(String loginId, String password, String name) {
+    public Manager(String loginId, String password, String name, ManagerGrade grade) {
         this.loginId = loginId;
         this.password = password;
         this.name = name;
+        this.grade = grade;
         this.createdAt = LocalDateTime.now();
+    }
+
+    public void changePassword(String password) {
+        this.password = password;
+    }
+
+    public void changeGrade(ManagerGrade grade) {
+        this.grade = grade;
     }
 }

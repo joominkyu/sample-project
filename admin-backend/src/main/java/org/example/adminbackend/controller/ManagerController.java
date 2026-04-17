@@ -1,12 +1,9 @@
 package org.example.adminbackend.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.adminbackend.repository.manager.ManagerCreateRequest;
-import org.example.adminbackend.repository.manager.ManagerLoginIdCheckResponse;
-import org.example.adminbackend.repository.manager.ManagerLoginRequest;
-import org.example.adminbackend.repository.manager.ManagerLoginResponse;
-import org.example.adminbackend.repository.manager.ManagerResponse;
+import org.example.adminbackend.repository.manager.*;
 import org.example.adminbackend.service.ManagerService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,13 +30,29 @@ public class ManagerController {
         return managerService.createManager(request);
     }
 
-    @PostMapping("/login")
-    public ManagerLoginResponse login(@RequestBody ManagerLoginRequest request) {
-        return managerService.login(request);
+    @PatchMapping("/{managerId}/password")
+    public ResponseEntity<Void> changePassword(
+            @PathVariable Long managerId,
+            @RequestBody ManagerPasswordChangeRequest request
+    ) {
+        managerService.changePassword(managerId, request.getNewPassword());
+        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{managerId}")
-    public void deleteManager(@PathVariable Long managerId) {
-        managerService.deleteManager(managerId);
+    public void deleteManager(
+            @PathVariable Long managerId,
+            @RequestHeader("X-Admin-LoginId") String currentLoginId
+    ) {
+        managerService.deleteManager(managerId, currentLoginId);
+    }
+
+    @PatchMapping("/{managerId}/grade")
+    public ManagerResponse updateGrade(
+            @PathVariable Long managerId,
+            @RequestHeader("X-Admin-LoginId") String currentLoginId,
+            @RequestBody ManagerGradeUpdateRequest request
+    ) {
+        return managerService.updateGrade(managerId, currentLoginId, request.getGrade());
     }
 }

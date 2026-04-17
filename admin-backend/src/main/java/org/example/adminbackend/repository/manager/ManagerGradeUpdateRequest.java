@@ -1,14 +1,11 @@
 package org.example.adminbackend.repository.manager;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 import org.example.adminbackend.entity.ManagerGrade;
 
 @Getter
-@AllArgsConstructor
-public class ManagerLoginResponse {
-    private String message;
-    private String loginId;
-    private String name;
+@Setter
+public class ManagerGradeUpdateRequest {
     private ManagerGrade grade;
 }
