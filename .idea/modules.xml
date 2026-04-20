@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin-backend.main.iml" filepath="$PROJECT_DIR$/.idea/modules/admin-backend.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backend.main.iml" filepath="$PROJECT_DIR$/.idea/modules/backend.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/sample-project.iml" filepath="$PROJECT_DIR$/.idea/sample-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin-backend/sample-project.admin-backend.main.iml" filepath="$PROJECT_DIR$/.idea/modules/admin-backend/sample-project.admin-backend.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backend/sample-project.backend.main.iml" filepath="$PROJECT_DIR$/.idea/modules/backend/sample-project.backend.main.iml" />
     </modules>
   </component>
 </project>

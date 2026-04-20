@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bca80421-fb14-4635-966c-6d4212b93cf3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/admin-backend/sample-project.admin-backend.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/backend/sample-project.backend.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/CollectionUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/EnumUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/MaskingUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/NumberUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/ObjectUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/PaginationUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/StringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/admin-backend.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/backend.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sample-project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/admin-backend/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-backend/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/settings.gradle" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sample-project" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "joominkyu"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/joominkyu/sample-project.git",
+    "accountId": "f36d2614-597d-4933-9c89-a5904c5cba7c"
+  }
+}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="3Cdt1CTQx3xwNPgXMEllEvccs0D" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build sample-project.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AdminBackendApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/mkjoo/Desktop/sample-project/common/src/main/java/org/example",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mkjoo\Desktop\sample-project\common\src\main\java\org\example" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.AdminBackendApplication">
+    <configuration name="AdminBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="sample-project.admin-backend.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.adminbackend.AdminBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="sample-project.backend.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.backend.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.32098.37" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bca80421-fb14-4635-966c-6d4212b93cf3" name="Changes" comment="" />
+      <created>1776727058726</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776727058726</updated>
+      <workItem from="1776727061360" duration="825000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
