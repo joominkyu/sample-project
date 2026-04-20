@@ -4,32 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bca80421-fb14-4635-966c-6d4212b93cf3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/admin-backend/sample-project.admin-backend.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/backend/sample-project.backend.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/CollectionUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/DateUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/EnumUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/MaskingUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/NumberUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/ObjectUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/PaginationUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/StringUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/admin-backend.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/backend.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sample-project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/admin-backend/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-backend/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/settings.gradle" beforeDir="false" />
+    <list default="true" id="bca80421-fb14-4635-966c-6d4212b93cf3" name="Changes" comment="util 파일 common 으로 공통처리">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/XssUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/service/BoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/service/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/service/NewsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/config/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +38,13 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -142,11 +130,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776727058726</updated>
-      <workItem from="1776727061360" duration="825000" />
+      <workItem from="1776727061360" duration="1957000" />
     </task>
+    <task id="LOCAL-00001" summary="util 파일 common 으로 공통처리">
+      <option name="closed" value="true" />
+      <created>1776729106422</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776729106423</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="util 파일 common 으로 공통처리" />
+    <option name="LAST_COMMIT_MESSAGE" value="util 파일 common 으로 공통처리" />
   </component>
 </project>

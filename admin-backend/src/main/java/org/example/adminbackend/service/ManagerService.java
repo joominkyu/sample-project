@@ -11,6 +11,7 @@ import org.example.adminbackend.repository.manager.ManagerLoginResponse;
 import org.example.adminbackend.repository.manager.ManagerPasswordChangeRequest;
 import org.example.adminbackend.repository.manager.ManagerRepository;
 import org.example.adminbackend.repository.manager.ManagerResponse;
+import org.example.util.XssUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -71,7 +72,7 @@ public class ManagerService {
         Manager manager = new Manager(
                 request.getLoginId(),
                 passwordEncoder.encode(request.getPassword()),
-                request.getName(),
+                XssUtils.escape(request.getName()),
                 grade
         );
 

@@ -9,6 +9,7 @@ import com.example.backend.repository.member.MemberRepository;
 import com.example.backend.repository.member.MemberResponse;
 import com.example.backend.repository.member.MemberSignupRequest;
 import lombok.RequiredArgsConstructor;
+import org.example.util.XssUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,9 +39,9 @@ public class MemberService {
         }
 
         Member member = new Member(
-                request.getName(),
-                request.getLoginId(),
-                passwordEncoder.encode(request.getPassword()),
+                XssUtils.escape(request.getName()),
+                XssUtils.escape(request.getLoginId()),
+                passwordEncoder.encode(XssUtils.escape(request.getPassword())),
                 MemberGrade.BASIC
         );
 

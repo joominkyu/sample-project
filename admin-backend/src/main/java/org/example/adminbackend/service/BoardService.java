@@ -6,6 +6,7 @@ import org.example.adminbackend.entity.Board;
 import org.example.adminbackend.repository.board.BoardCreateRequest;
 import org.example.adminbackend.repository.board.BoardRepository;
 import org.example.adminbackend.repository.board.BoardResponse;
+import org.example.util.XssUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,7 +35,7 @@ public class BoardService {
 
     @Transactional
     public BoardResponse createBoard(BoardCreateRequest request) {
-        Board board = new Board(request.getName());
+        Board board = new Board(XssUtils.escape(request.getName()));
         Board saved = boardRepository.save(board);
         return BoardResponse.from(saved);
     }
@@ -44,7 +45,7 @@ public class BoardService {
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("게시판을 찾을 수 없습니다. id=" + id));
 
-        board.update(request.getName());
+        board.update(XssUtils.escape(request.getName()));
 
         return BoardResponse.from(board);
     }

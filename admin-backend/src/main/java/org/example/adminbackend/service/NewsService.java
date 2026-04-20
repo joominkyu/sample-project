@@ -7,6 +7,7 @@ import org.example.adminbackend.repository.news.NewsCreateRequest;
 import org.example.adminbackend.repository.news.NewsRepository;
 import org.example.adminbackend.repository.news.NewsResponse;
 import org.example.adminbackend.repository.news.NewsUpdateRequest;
+import org.example.util.XssUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,7 +36,11 @@ public class NewsService {
 
     @Transactional
     public NewsResponse createNews(NewsCreateRequest request) {
-        News news = new News(request.getTitle(), request.getContent());
+        News news = new News(
+                XssUtils.escape(request.getTitle()),
+                XssUtils.escape(request.getContent())
+        );
+
         News saved = newsRepository.save(news);
         return NewsResponse.from(saved);
     }
@@ -45,7 +50,10 @@ public class NewsService {
         News news = newsRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("뉴스를 찾을 수 없습니다. id=" + id));
 
-        news.update(request.getTitle(), request.getContent());
+        news.update(
+                XssUtils.escape(request.getTitle()),
+                XssUtils.escape(request.getContent())
+        );
 
         return NewsResponse.from(news);
     }
