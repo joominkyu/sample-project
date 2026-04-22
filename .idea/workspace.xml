@@ -4,13 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bca80421-fb14-4635-966c-6d4212b93cf3" name="Changes" comment="util 파일 common 으로 공통처리">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/example/util/XssUtils.java" afterDir="false" />
+    <list default="true" id="bca80421-fb14-4635-966c-6d4212b93cf3" name="Changes" comment="XssUtil 추가">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-frontend/components/admin/HtmlContent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-frontend/components/admin/TiptapEditor.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin-frontend/utils/content.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/common/HtmlContent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/utils/content.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0.0/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.0.0/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.0.0/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.0.0/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.0.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0.0/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.0.0/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/entity/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/entity/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/repository/board/BoardCreateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/repository/board/BoardCreateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/repository/board/BoardResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/repository/board/BoardResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/service/BoardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/service/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin-backend/src/main/java/org/example/adminbackend/service/NewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend/app/admin/board/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend/app/admin/board/create/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend/app/admin/board/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend/app/admin/board/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend/app/admin/news/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend/app/admin/news/create/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend/app/admin/news/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend/app/admin/news/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend/components/admin/EditBoardForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend/components/admin/EditBoardForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend/components/admin/EditNewsForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend/components/admin/EditNewsForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend/services/adminBoard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend/services/adminBoard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-frontend/types/board.ts" beforeDir="false" afterPath="$PROJECT_DIR$/admin-frontend/types/board.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build/libs/common-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/libs/common-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend" beforeDir="false" afterPath="$PROJECT_DIR$/frontend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/board/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/board/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/board/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/board/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/news/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/news/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/news/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/news/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/main/MainBoardSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/main/MainBoardSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/main/MainNewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/main/MainNewsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/types/board.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types/board.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,53 +86,69 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/admin-frontend" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "joominkyu"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;joominkyu&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/joominkyu/sample-project.git",
-    "accountId": "f36d2614-597d-4933-9c89-a5904c5cba7c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/joominkyu/sample-project.git&quot;,
+    &quot;accountId&quot;: &quot;f36d2614-597d-4933-9c89-a5904c5cba7c&quot;
   }
-}]]></component>
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="3Cdt1CTQx3xwNPgXMEllEvccs0D" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build sample-project.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AdminBackendApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/mkjoo/Desktop/sample-project/common/src/main/java/org/example",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build sample-project.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AdminBackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.BackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mkjoo/Desktop/sample-project/common/src/main/java/org/example&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\mkjoo\\Desktop\\sample-project\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mkjoo\Desktop\sample-project\common\src\main\java\org\example" />
@@ -130,7 +185,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776727058726</updated>
-      <workItem from="1776727061360" duration="1957000" />
+      <workItem from="1776727061360" duration="17429000" />
+      <workItem from="1776812656055" duration="15956000" />
     </task>
     <task id="LOCAL-00001" summary="util 파일 common 으로 공통처리">
       <option name="closed" value="true" />
@@ -140,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776729106423</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="XssUtil 추가">
+      <option name="closed" value="true" />
+      <created>1776729504779</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776729504779</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +212,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="util 파일 common 으로 공통처리" />
-    <option name="LAST_COMMIT_MESSAGE" value="util 파일 common 으로 공통처리" />
+    <MESSAGE value="XssUtil 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="XssUtil 추가" />
   </component>
 </project>

@@ -23,6 +23,9 @@ public class Board {
     @Column(nullable = false)
     private String name;
 
+    @Column(columnDefinition = "TEXT")
+    private String content;
+
     @CreatedDate
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -31,11 +34,13 @@ public class Board {
     @Column(nullable = false)
     private LocalDateTime updatedAt;
 
-    public Board(String name) {
+    public Board(String name, String content) {
         this.name = name;
+        this.content = content;
     }
 
-    public void update(String name) {
+    public void update(String name, String content) {
         this.name = name;
+        this.content = content;
     }
 }

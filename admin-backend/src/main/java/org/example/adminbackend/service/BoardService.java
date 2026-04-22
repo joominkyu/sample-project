@@ -35,7 +35,11 @@ public class BoardService {
 
     @Transactional
     public BoardResponse createBoard(BoardCreateRequest request) {
-        Board board = new Board(XssUtils.escape(request.getName()));
+        Board board = new Board(
+                XssUtils.escape(request.getName()),
+                request.getContent()
+        );
+
         Board saved = boardRepository.save(board);
         return BoardResponse.from(saved);
     }
@@ -45,7 +49,10 @@ public class BoardService {
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("게시판을 찾을 수 없습니다. id=" + id));
 
-        board.update(XssUtils.escape(request.getName()));
+        board.update(
+                XssUtils.escape(request.getName()),
+                request.getContent()
+        );
 
         return BoardResponse.from(board);
     }
